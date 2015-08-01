@@ -1,15 +1,16 @@
-{% extends '::base.html.twig' %}
+{% extends 'AppBundle::layout.html.twig' %}
 
-{% block body -%}
-    <h1>Cliente list</h1>
-
-    <table class="records_list">
+{% block mainarea%}
+    <h1>Lista de Clientes</h1>
+	<div class="table-responsive">
+    <table class="table table-condensed">
+    
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Nombre</th>
                 <th>Preciohora</th>
-                <th>Actions</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -19,25 +20,15 @@
                 <td>{{ entity.nombre }}</td>
                 <td>{{ entity.preciohora }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('cliente_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('cliente_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                        <a href="{{ path('cliente_show', { 'id': entity.id }) }}"class="btn btn-default fa fa-eye"></a>
+                        <a href="{{ path('cliente_edit', { 'id': entity.id }) }}"class="btn btn-default fa fa-edit"></a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-        <ul>
-        <li>
+</div>
             <a href="{{ path('cliente_new') }}">
-                Create a new entry
+                Crear nueva entrada
             </a>
-        </li>
-    </ul>
     {% endblock %}

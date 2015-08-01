@@ -1,4 +1,4 @@
-{% extends '::base.html.twig' %}
+{% extends 'AppBundle::layout.html.twig' %}
 
 {% block body -%}
     <h1>Partedetalle list</h1>
@@ -11,7 +11,7 @@
                 <th>Fecha</th>
                 <th>Horainicio</th>
                 <th>Horafin</th>
-                <th>Actions</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -25,10 +25,10 @@
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('partedetalle_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('partedetalle_show', { 'id': entity.id }) }}"class="btn btn-default fa fa-eye"></a>
                     </li>
                     <li>
-                        <a href="{{ path('partedetalle_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('partedetalle_edit', { 'id': entity.id }) }}"class="btn btn-default fa fa-edit"></a>
                     </li>
                 </ul>
                 </td>
@@ -40,7 +40,7 @@
         <ul>
         <li>
             <a href="{{ path('partedetalle_new') }}">
-                Create a new entry
+                Crear nueva entrada
             </a>
         </li>
     </ul>

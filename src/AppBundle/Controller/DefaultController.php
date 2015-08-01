@@ -15,7 +15,7 @@ class DefaultController extends Controller
      /**
      * Lists all Cliente entities.
      *
-     * @Route("/", name="default")
+     * @Route("/", name="inicio")
      * @Method("GET")
      * @Template()
      */
